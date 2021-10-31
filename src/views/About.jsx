@@ -5,22 +5,22 @@ import Img from "../assets/clothes1.jpg"
 
 const About = () => {
 	return (
-		<div class='card my-3'>
-			<div class='row g-0'>
-				<div class='col-md-4'>
+		<div className='card my-3'>
+			<div className='row g-0'>
+				<div className='col-md-4'>
 					<img
 						src={Img}
-						class='img-fluid rounded-start'
+						className='img-fluid rounded-start'
 						alt='women'
 						height='200px'
 					/>
 				</div>
-				<div class='col-md-8'>
-					<div class='card-body'>
-						<h5 class='card-title'>
+				<div className='col-md-8'>
+					<div className='card-body'>
+						<h5 className='card-title'>
 							Acerca de D´Estilo
 						</h5>
-						<p class='card-text'>
+						<p className='card-text'>
 							Lorem ipsum dolor sit amet,
 							consectetur adipisicing elit. Dicta
 							deserunt ea earum error, similique

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Skeleton from "react-loading-skeleton"
 import { Link } from "react-router-dom"
 
 const Products = () => {
@@ -89,15 +88,15 @@ const Products = () => {
 						<>
 							<div className='col-md-3 mb-4'>
 								<div
-									class='card h-100 text-center p-4'
+									className='card h-100 text-center p-4'
 									key={product.id}>
 									<img
 										src={product.image}
-										class='card-img-top'
+										className='card-img-top'
 										alt={product.title}
 										height='250px'
 									/>
-									<div class='card-body'>
+									<div className='card-body'>
 										<h5 class='card-title mb-0'>
 											{product.title.substring(
 												0,
@@ -105,13 +104,13 @@ const Products = () => {
 											)}
 											...
 										</h5>
-										<p class='card-text lead fw-bold'>
+										<p className='card-text lead fw-bold'>
 											${product.price}
 										</p>
 
 										<Link
 											to={`/products/${product.id}`}
-											class='btn btn-outline-dark w-80'>
+											className='btn btn-outline-dark w-80'>
 											Ver Más
 										</Link>
 									</div>
@@ -135,7 +134,7 @@ const Products = () => {
 						<hr />
 					</div>
 				</div>
-				<div className='row justify-content-center'>
+				<div className='row justify-content-center '>
 					{loader ? <Loader /> : <ShowProducts />}
 				</div>
 			</div>

@@ -11,6 +11,7 @@ import Cart from "./views/Cart";
 import Favorites from "./views/Favorites";
 import About from "./views/About";
 import Contact from './views/Contact';
+import Checkout from './views/Checkout';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/favs" exact component={Favorites} />
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
+        <Route path="/checkout" exact component={Checkout} />
       </Switch>
     </>
   );

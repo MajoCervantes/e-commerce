@@ -1,4 +1,6 @@
-const initialState = [];
+const initialState = [
+
+];
 
 const handleCart = (state = initialState, action) => {
     const product = action.payload;
@@ -6,7 +8,7 @@ const handleCart = (state = initialState, action) => {
         case "ADDITEM":
             const exist = state.find((p) => p.id === product.id);
             if (exist) {
-                return state.map((p) => p.id === product.id ? { ...p, qty: p.qty + 1 } : p);
+                return state.map((p, index) => p.id === product.id ? { ...p, qty: p.qty + 1 } : p);
             } else {
                 const product = action.payload;
                 return [ ...state, { ...product, qty: 1 } ];

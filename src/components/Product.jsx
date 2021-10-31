@@ -4,7 +4,6 @@ import { addCart } from "../redux/actions/actions"
 import { addFavs } from "../redux/actions/actions"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
-import Skeleton from "react-loading-skeleton"
 
 const Product = () => {
 	const { id } = useParams()
@@ -37,23 +36,10 @@ const Product = () => {
 	const Loader = () => {
 		return (
 			<>
-				<div className='col-md-5'>
-					<Skeleton height={400} />
-				</div>
-				<div
-					className='col-md-6'
-					style={{ lineHeight: 2 }}>
-					<Skeleton height={50} width={300} />
-					<Skeleton height={75} />
-					<Skeleton height={25} width={150} />
-					<Skeleton height={50} />
-					<Skeleton height={150} />
-					<Skeleton height={50} width={100} />
-					<Skeleton
-						height={50}
-						width={100}
-						style={{ marginLeft: 6 }}
-					/>
+				<div class='spinner-border' role='status'>
+					<span class='visually-hidden'>
+						Loading...
+					</span>
 				</div>
 			</>
 		)
@@ -112,7 +98,7 @@ const Product = () => {
 	return (
 		<div>
 			<div className='container py-5'>
-				<div className='row py-4'>
+				<div className='row justify-content-center py-4'>
 					{loader ? <Loader /> : <ShowProduct />}
 				</div>
 			</div>

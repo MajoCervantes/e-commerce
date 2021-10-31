@@ -13,7 +13,7 @@ const Cart = () => {
 	const state = useSelector(
 		(state) => state.handleCart
 	)
-	// console.log(state)
+
 	const dispatch = useDispatch()
 
 	const handleAdd = (item) => {
@@ -23,7 +23,7 @@ const Cart = () => {
 	const handleDel = (item) => {
 		dispatch(delCart(item))
 	}
-
+	console.log(state)
 	const emptyCart = () => {
 		return (
 			<div className='px-4 my-5 bg-light rounded-3 py-5'>
