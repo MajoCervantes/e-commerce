@@ -1,17 +1,27 @@
 import './App.css';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import { Switch, Route } from "react-router-dom";
+
+
+//Components
+import NavBar from "./components/Navbar";
+import Home from "./components/Home";
+import Products from "./components/Products";
+import Product from "./components/Product";
+import Cart from "./components/Cart";
+import Favorites from "./components/Favorites";
 
 function App() {
   return (
-    <div className="App">
-      <Stack spacing={2} direction="row">
-        <Button variant="text">Text</Button>
-        <Button variant="contained">Contained</Button>
-        <Button variant="outlined">Outlined</Button>
-      </Stack>
-
-    </div>
+    <>
+      <NavBar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/products" exact component={Products} />
+        <Route path="/products/:id" exact component={Product} />
+        <Route path="/cart" exact component={Cart} />
+        <Route path="/favs" exact component={Favorites} />
+      </Switch>
+    </>
   );
 }
 
