@@ -5,8 +5,9 @@ const Products = () => {
 	const [data, setData] = useState([])
 	const [filter, setFilter] = useState(data)
 	const [loader, setLoader] = useState(false)
+	const [mounted, setMounted] = useState(true)
 
-	let ComponentMounted = true
+	// let ComponentMounted = true
 
 	useEffect(() => {
 		const getProducts = async () => {
@@ -14,17 +15,17 @@ const Products = () => {
 			const response = await fetch(
 				"https://fakestoreapi.com/products"
 			)
-			if (ComponentMounted) {
+			if (mounted) {
 				setData(await response.clone().json())
 				setFilter(await response.json())
 				setLoader(false)
 			}
 			return () => {
-				ComponentMounted = false
+				setMounted(false)
 			}
 		}
 		getProducts()
-	}, [])
+	}, [mounted])
 
 	const Loader = () => {
 		return (
