@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
-import handleCart from "../redux/reducers/handleCart"
 
 const Navbar = () => {
 	const state = useSelector(
 		(state) => state.handleCart
 	)
+
+	// console.log(state.map((p) => p.qty))
 
 	return (
 		<>
@@ -15,7 +16,7 @@ const Navbar = () => {
 					<Link
 						class='navbar-brand fw-bold fs-4'
 						to='/'>
-						La collection
+						D’Estilo
 					</Link>
 					<button
 						class='navbar-toggler'
@@ -36,45 +37,45 @@ const Navbar = () => {
 									class='nav-link active'
 									aria-current='page'
 									to='/'>
-									Home
+									Inicio
 								</Link>
 							</li>
 							<li class='nav-item'>
 								<Link
 									class='nav-link'
 									to='/products'>
-									Products
+									Productos
 								</Link>
 							</li>
 							<li class='nav-item'>
 								<Link
 									class='nav-link'
 									to='/about'>
-									About
+									Acerca
 								</Link>
 							</li>
 							<li class='nav-item'>
 								<Link
 									class='nav-link'
 									to='/contact'>
-									Contact
+									Contacto
 								</Link>
 							</li>
 						</ul>
 						<div className='buttons'>
 							<Link
 								to='/favs'
-								className='btn btn-outline-dark'>
+								className='btn btn-outline-dark mx-2'>
 								{" "}
 								<i className='fa fa-heart me-1'></i>{" "}
 								Favoritos
 							</Link>
 							<Link
 								to='/cart'
-								className='btn btn-outline-dark'>
+								className='btn btn-outline-dark mx-2'>
 								{" "}
 								<i className='fa fa-shopping-cart ms-2'></i>{" "}
-								Cart ({state.length})
+								Carrito ({state.length})
 							</Link>
 						</div>
 					</div>

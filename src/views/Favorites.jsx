@@ -3,6 +3,7 @@ import {
 	useSelector,
 	useDispatch,
 } from "react-redux"
+import { addCart } from "../redux/actions/actions"
 import { Link } from "react-router-dom"
 import { delFavs } from "../redux/actions/actions"
 
@@ -11,6 +12,10 @@ const Favorites = () => {
 		(state) => state.handleFavs
 	)
 	const dispatch = useDispatch()
+
+	const addProduct = (product) => {
+		dispatch(addCart(product))
+	}
 
 	const handleDel = (item) => {
 		dispatch(delFavs(item))
@@ -27,7 +32,7 @@ const Favorites = () => {
 		)
 	}
 
-	console.log(state)
+	// console.log(state)
 	const favItems = (product) => {
 		return (
 			<>
@@ -47,13 +52,22 @@ const Favorites = () => {
 								<p className='lead fw-bold'>
 									${product.price}
 								</p>
-								<button
-									className='btn btn outline-dark me-4'
-									onClick={() =>
-										handleDel(product)
-									}>
-									<i className='fa fa-trash-o'></i>
-								</button>
+								<div className='d-flex'>
+									<button
+										className='btn btn outline-dark me-4'
+										onClick={() =>
+											handleDel(product)
+										}>
+										<i className='fa fa-trash-o'></i>
+									</button>
+									<button
+										className='btn btn-outline-dark px-4 py-2'
+										onClick={() =>
+											addProduct(product)
+										}>
+										Agregar al carrito
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>

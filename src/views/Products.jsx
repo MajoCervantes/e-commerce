@@ -30,17 +30,10 @@ const Products = () => {
 	const Loader = () => {
 		return (
 			<>
-				<div className='col-md-3'>
-					<Skeleton height={350} />
-				</div>
-				<div className='col-md-3'>
-					<Skeleton height={350} />
-				</div>
-				<div className='col-md-3'>
-					<Skeleton height={350} />
-				</div>
-				<div className='col-md-3'>
-					<Skeleton height={350} />
+				<div class='spinner-border' role='status'>
+					<span class='visually-hidden'>
+						Loading...
+					</span>
 				</div>
 			</>
 		)
@@ -60,35 +53,35 @@ const Products = () => {
 					<button
 						className='btn btn-outline-dark me-2'
 						onClick={() => setFilter(data)}>
-						All
+						Todo
 					</button>
 					<button
 						className='btn btn-outline-dark me-2'
 						onClick={() =>
 							filterProduct("men's clothing")
 						}>
-						Men´s Clothing
+						Caballero
 					</button>
 					<button
 						className='btn btn-outline-dark me-2'
 						onClick={() =>
 							filterProduct("women's clothing")
 						}>
-						Womens´s Clothing
+						Dama
 					</button>
 					<button
 						className='btn btn-outline-dark me-2'
 						onClick={() =>
 							filterProduct("jewelery")
 						}>
-						Jewelery
+						Joyería
 					</button>
 					<button
 						className='btn btn-outline-dark me-2'
 						onClick={() =>
 							filterProduct("electronics")
 						}>
-						Electronic
+						Electronicos
 					</button>
 				</div>
 				{filter.map((product) => {
@@ -119,7 +112,7 @@ const Products = () => {
 										<Link
 											to={`/products/${product.id}`}
 											class='btn btn-outline-dark w-80'>
-											Buy Now
+											Ver Más
 										</Link>
 									</div>
 								</div>
@@ -137,7 +130,7 @@ const Products = () => {
 				<div className='row'>
 					<div className='col-12 mb-5'>
 						<h1 className='display-6 fw-bolder text-center'>
-							Latest Products
+							Últimos productos
 						</h1>
 						<hr />
 					</div>

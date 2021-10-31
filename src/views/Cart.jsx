@@ -13,6 +13,7 @@ const Cart = () => {
 	const state = useSelector(
 		(state) => state.handleCart
 	)
+	// console.log(state)
 	const dispatch = useDispatch()
 
 	const handleAdd = (item) => {
@@ -52,7 +53,7 @@ const Cart = () => {
 							<div className='col-md-4'>
 								<h3>{product.title}</h3>
 								<p className='lead fw-bold'>
-									{product.qty} x ${product.price}{" "}
+									{product.qty} x ${product.price}
 									= ${product.qty * product.price}
 								</p>
 								<button
@@ -82,6 +83,7 @@ const Cart = () => {
 			<>
 				<div className='container'>
 					<div className='row'>
+						<p>Total: $</p>
 						<Link
 							to='/checkout'
 							className='btn btn-outline-dark mb-5 w-25 mx-auto'>

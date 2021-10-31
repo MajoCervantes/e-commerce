@@ -5,16 +5,17 @@ const handleFavs = (state = initialState, action) => {
     const product = action.payload;
     switch (action.type) {
         case "ADDFAV":
-            const exist = state.find((p) => p.id === product.id);
-            if (exist) {
-                return state;
-            } else {
-                const product = action.payload;
-                return [ ...state, product ];
-            }
+
+            return [ ...state, { ...product, qty: 1 } ];
+
 
         case "DELFAV":
-            return state.map((p, index) => p.id === product.id && state.splice(index, 1));
+            const exist1 = state.find((p) => p.id === product.id);
+            if (exist1.qty === 1) {
+                return state.filter((p) => p.id !== product.id);
+            } else {
+                return state.map((p) => p.id === product.id ? { ...p, qty: - 1 } : p);
+            }
 
         default:
             return state;

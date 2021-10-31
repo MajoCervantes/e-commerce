@@ -4,11 +4,13 @@ import { Switch, Route } from "react-router-dom";
 
 //Components
 import NavBar from "./components/Navbar";
-import Home from "./components/Home";
-import Products from "./components/Products";
+import Home from "./views/Home";
+import Products from "./views/Products";
 import Product from "./components/Product";
-import Cart from "./components/Cart";
-import Favorites from "./components/Favorites";
+import Cart from "./views/Cart";
+import Favorites from "./views/Favorites";
+import About from "./views/About";
+import Contact from './views/Contact';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/products/:id" exact component={Product} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/favs" exact component={Favorites} />
+        <Route path="/about" exact component={About} />
+        <Route path="/contact" exact component={Contact} />
       </Switch>
     </>
   );

@@ -92,12 +92,12 @@ const Product = () => {
 					<button
 						className='btn btn-outline-dark px-4 py-2'
 						onClick={() => addProduct(product)}>
-						Add to Cart
+						Agregar al carrito
 					</button>
 					<Link
 						to='/cart'
 						className='btn btn-dark ms-2 px-3 py-2'>
-						Go to Cart
+						Ir al carrito
 					</Link>
 					<button
 						className='btn btn-outline-dark px-4 py-2 ms-2'
